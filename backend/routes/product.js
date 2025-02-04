@@ -16,7 +16,11 @@ router.get("/", async (req, res) => {
 // Pridanie nového produktu
 router.post("/", async (req, res) => {
     try {
-        const newProduct = new Products(req.body);
+        const newProduct = new Products({
+            name: req.body.name,
+            price: req.body.price,
+            description: req.body.description
+        });
         const savedProduct = await newProduct.save();
         res.status(201).json(savedProduct);
     } catch (err) {

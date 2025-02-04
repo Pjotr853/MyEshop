@@ -22,9 +22,13 @@ const Layout = () => {
                     navbarScroll>
                     
                     <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                    <Nav.Link as={Link} to="/adding">Adding</Nav.Link>
                     <Nav.Link href="#" disabled>Link </Nav.Link>
                 </Nav> 
-                <Button variant="outline-success"><FaShoppingCart className="fs-2"/></Button>
+                <Button variant="outline-success" as={Link} to="/cart">
+  <FaShoppingCart className="fs-2" />
+</Button>
+
                 </Navbar.Collapse>
             </Container>
             </Navbar>
