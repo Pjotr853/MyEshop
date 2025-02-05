@@ -8,7 +8,10 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import { FaShoppingCart } from "react-icons/fa";
 
+import { useSelector} from "react-redux";
+
 const Layout = () => {
+    const counter = useSelector((state) => state.cart.counter);
     return (
         <div>
             <Navbar expand="lg" className="bg-body-tertiary">
@@ -21,13 +24,15 @@ const Layout = () => {
                     style={{ maxHeight: '100px' }}
                     navbarScroll>
                     
-                    <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                     <Nav.Link as={Link} to="/adding">Adding</Nav.Link>
+                    <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                     <Nav.Link href="#" disabled>Link </Nav.Link>
+
                 </Nav> 
                 <Button variant="outline-success" as={Link} to="/cart">
-  <FaShoppingCart className="fs-2" />
-</Button>
+                    {counter}
+                    <FaShoppingCart className="fs-2" />
+                </Button>
 
                 </Navbar.Collapse>
             </Container>

@@ -1,20 +1,14 @@
 import React, { useState } from "react";
 import ProductList from "./components/ProductList";
+import  './components/home.css';
 
 
-function Home(){
-    const [selectedProductId, setSelectedProductId] = useState(null);
-    const [refresh, setRefresh] = useState(false);
-
+function Home(){   
     return(
-        <div>
+        <div className="container">
             <h1>Home Page</h1>
+            <ProductList  />
             
-            <ProductList key={refresh} onSelectProduct={setSelectedProductId} />
-            
-            {selectedProductId && (
-                <p>Vybraný produkt ID: {selectedProductId}</p>
-            )}
         </div>
     );
 }
