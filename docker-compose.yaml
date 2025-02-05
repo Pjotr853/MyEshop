@@ -7,8 +7,6 @@ services:
 
   backend:
     build: ./backend
-    volumes:
-      - backend_data:/app
     env_file:
       - ./backend/dockerenv.env
     ports:
@@ -18,8 +16,6 @@ services:
 
   frontend:
     build: ./frontend
-    volumes:
-      - frontend_data:/app
     ports:
       - '3000:3000'
     stdin_open: true
@@ -29,5 +25,4 @@ services:
 
 volumes:
   mongo_data:
-  backend_data:
-  frontend_data:
+
